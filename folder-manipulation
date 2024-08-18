@@ -1,0 +1,36 @@
+import os
+###########################################################
+def create():       #Creates Folder
+    d=input("Enter A Drive Where You Want The Folder To Be Created : ")
+    f=input("Enter A Name For Folder : ")
+    d=d.upper()+":"
+    os.mkdir(os.path.join(d,f))
+    print("\nFolder Successfully Created\n")
+###########################################################
+def delete():       #Deletes Folder
+    d=input("Enter The Drive From Where You Want The Folder To Be Deleted : ")
+    f=input("Enter The Name Of Folder : ")
+    d=d.upper()+":"
+    os.rmdir(os.path.join(d,f))
+    print("\nFolder Successfully Deleted\n")
+###########################################################
+def rename():       #Renames Folder
+    d=input("Enter The Drive Where The Folder Is Located : ")
+    f=input("Enter The Existing Folder Name : ")
+    k=input("Enter The New Folder Name : ")
+    d=d.upper()+":"
+    os.rename(os.path.join(d,f),
+              os.path.join(d,k))
+    print("\nFolder Successfully Renamed\n")
+###########################################################
+while True:    
+    x=int(input("Select An Option :-\n1 ---> Create Folder\n2 ---> Delete Folder\n3 ---> Rename Folder\n0 ---> Exit\n"))
+    if x==1:
+        create()
+    elif x==2:
+        delete()
+    elif x==3:
+        rename()
+    else:
+        break
+###########################################################
